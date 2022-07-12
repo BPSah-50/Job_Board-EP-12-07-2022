@@ -13,6 +13,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard', haschild:false , subtitle:"",  icon: 'pe-7s-graph', class: '' },
     { path: '/dashboard', title: 'Profile', haschild:false , subtitle:"",  icon: 'pe-7s-graph', class: '' },
     { path: '/dashboard', title: 'Job Board', haschild:true , subtitle:" job Apply ",  icon: 'pe-7s-graph', class: '' },
+
     // { path: '/user', title: 'User Profile',  icon:'pe-7s-user', class: '' },
     // { path: '/table', title: 'Table List',  icon:'pe-7s-note2', class: '' },
     
@@ -32,6 +33,10 @@ export class SidebarComponent implements OnInit {
   panelOpenState = false;
 
   constructor() { }
+
+  btnClick= function () {
+    this.router.navigateByUrl('/jobmainboard');
+};
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
